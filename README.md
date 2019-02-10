@@ -50,6 +50,7 @@ This is the grafana dashboard which appears after browsing https://localhost:300
 This shows the logs.
 ### 2. Compose
 There are containers for every service. To run these services simultaneously, Docker Compose is being used. `docker-compose.yml` file is the docker compose file to run all the above-mentioned containers or services simultaneously. By `docker-compose up` command, compose file will run resulting starting of all these services.
+![compose](https://user-images.githubusercontent.com/25201552/52540635-bb849380-2db1-11e9-88ff-9e4aaaa77f3d.png)
 ### 3. Clustering
 With the help of the docker compose file, we can run these services on a single machine. To deploy those services on more than one machine, we need to make a cluster. In this project, Docker Swarm is used. In this cluster, one node becomes manager and rest becomes workers. The manager runs commands `docker swarm init --advertise-addr <ip of manager>` and initialize docker swarm. It creates a token. After that paste that token to the worker nodes so that they can join the docker swarm as well. To deploy parse-server, a docker swarm is created with one manager(manager) and two worker nodes(worker-1 and worker-2).
 `docker swarm init --advertise-addr <ip of manager>`
