@@ -45,9 +45,18 @@ This page implies that server is running.
 It's Dockerfile is being created first,which is present in node-inspector folder. In the same way as done for parse-server-example
 first build the Dockerfile with command ` docker build . -t amanpreet9391/node-inspector`(amanpreet9391/node-inspector is name given
 to the node-inspector image). To run this image, run `docker run -p 8080:8080 -p 5858:5858 -p 9229:9229 -t amanpreet9391/node-inspector`
-This container is also present on dockerhub, so it can be pulled from there as well by `docker pull amanpreet9391/node-inspector` command.
+This container is pushed on to the dockerhub, so it can be pulled from there as well by `docker pull amanpreet9391/node-inspector` command.
 ![chrome-devtool](https://user-images.githubusercontent.com/25201552/52538385-f974be00-2d97-11e9-8b16-18cc8fc5b947.png)
 Just copy the URL shown in the last after running this Docker Container. Dashboard will appear. Debug and perform different task 
 with this on your script.
+* For remotely triggered application updates, Jenkins is used. Jenkins is alos containerized.There is already a docker container available for jenkins, with the name jenkins. For this just run ` docker pull jenkins` .  Then `docker run -p 8081:8080 -t jenkins`(jenkins will run at port 8081). You can access Jenkins dashboard on URL https://localhost:8081.
+![jenkins](https://user-images.githubusercontent.com/25201552/52538524-d1865a00-2d99-11e9-861c-548c84f6a350.png)
+* In the same way run docker container for grafana by ` docker pull grafana/grafana` (docker container available on docker hub).
+Run the container by `docker run -p 3000:3000 -t grafana/grafana`.
+![grafana-dashboard](https://user-images.githubusercontent.com/25201552/52538586-6c7f3400-2d9a-11e9-9324-88e35cb11ed9.png)
+This is the grafana dashboard which appear after browsing https://localhost:3000 .
+![grafana-logs](https://user-images.githubusercontent.com/25201552/52538606-a819fe00-2d9a-11e9-9ab8-d4bb078f52fe.png)
+This shows the logs.
 ### 2. Compose
+There are containers for every service. To run these services simultaneously,Docker Compose is being used. `docker-compose.yml` file is the docker compose file to run all the above mentioned containers or services simultaneously. By `docker-compose up` command, compose file will run resulting starting of all these services.
 ### 3. Clustering
