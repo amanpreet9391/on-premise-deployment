@@ -39,7 +39,7 @@ first, build the Dockerfile with command ` docker build . -t amanpreet9391/node-
 to the node-inspector image). To run this image, run `docker run -p 8080:8080 -p 5858:5858 -p 9229:9229 -t amanpreet9391/node-inspector`
 This container is pushed on to the docker hub, so it can be pulled from there as well by `docker pull amanpreet9391/node-inspector` command.
 ![chrome-devtool](https://user-images.githubusercontent.com/25201552/52538385-f974be00-2d97-11e9-8b16-18cc8fc5b947.png)
-Just copy the URL shown in the last after running this Docker Container. The dashboard will appear. Debug and perform a different task with this on your script.
+Just copy the URL shown in the last after running this Docker Container. The dashboard will appear. Debug and perform a different task with this on your sicript.
 * For remotely triggered application updates, Jenkins is used. Jenkins is also containerized.There is already a docker container available for Jenkins, with the name Jenkins. For this just run ` docker pull, Jenkins` .  Then `docker run -p 8081:8080 -t Jenkins`(Jenkins will run at port 8081). You can access Jenkins dashboard on URL https://localhost:8081.
 ![jenkins](https://user-images.githubusercontent.com/25201552/52538524-d1865a00-2d99-11e9-861c-548c84f6a350.png)
 * In the same way running Docker container for grafana by ` docker pull grafana/grafana` (docker container available on docker hub).
@@ -66,4 +66,5 @@ With the help of the docker compose file, we can run these services on a single 
 ![list of all nodes in swarm](https://user-images.githubusercontent.com/25201552/52540404-0c46bd00-2daf-11e9-9353-b8882ae18a4a.png)
 ##### To create service in manager run `docker service create --name "parse-server" -p 1337:1337 amanpreet9391/parse-server1`
 ![running parse-server service on swarm cluster](https://user-images.githubusercontent.com/25201552/52540425-4748f080-2daf-11e9-9770-3dfdb2067011.png)
+For docker swarm commands refer to `Docker-Swarm-commands.txt`
 

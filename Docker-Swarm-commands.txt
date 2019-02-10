@@ -1,0 +1,7 @@
+docker swarm init --advertise-addr <ip of manager>          -------->>  to initialise docker swarm
+docker node ls                                              -------->>  to list the nodes in docker swarm
+docker service create --name "name of app" -p port:port image------->>  to create a service
+docker service ls                                            ------->>  to list all the services running
+docker service ps name-of-app                                ------->>  to get all the detail about a service 
+docker ps                                                    ------->>  list of running containers
+
